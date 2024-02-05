@@ -417,7 +417,7 @@ class BankMandiri extends PaymentModule
     {
         $cart = $this->context->cart;
         $total = sprintf(
-            $this->trans('%1$s (tax incl.)', array(), 'Modules.BankMandiri.Shop'),
+            $this->trans('%1$s (tax incl.)', array(), 'Modules.BankMandiri'),
             Tools::displayPrice($cart->getOrderTotal(true, Cart::BOTH))
         );
 
@@ -436,8 +436,8 @@ class BankMandiri extends PaymentModule
             $bankmandiriAddress = '___________';
         }
 
-        $bankmandiriReservationDays = Configuration::get('BANK_MANDIRI_RESERVATION_DAYS');
-        if (false === $bankmandiriReservationDays) {
+        $bankmandiriReservationDays = Configuration::get('BANK_MANDIRI');
+        if (false === $bankmandiri) {
             $bankmandiriReservationDays = 7;
         }
 
